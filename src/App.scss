@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+}
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+}
