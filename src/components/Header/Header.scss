@@ -1,18 +1,22 @@
-
 .header-top {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: 80px;
+
 
     .search-container {
         flex: 1;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        position: relative;
 
         .input-container {
             overflow-x: hidden;
-            margin-right: 5px;
+            position: absolute;
+            top: -50%;
+            right: 1.5rem;
 
             .search-input {
                 border: none;
@@ -38,6 +42,11 @@
 
     .burger-container {
         flex: 1;
+
+        img {
+            display: none;
+            width: 25px;
+        }
     }
 
     .logo-container {
@@ -49,5 +58,15 @@
         img {
             width: 181px;
         }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .burger-container {
+            img {
+                display: inline-block;
+            }
+        }
+
+
     }
 }
