@@ -3,7 +3,7 @@
     justify-content: flex-end;
     align-items: center;
     height: 80px;
-
+    border-bottom: 1px solid #E9E9E9;
 
     .search-container {
         flex: 1;
@@ -25,10 +25,17 @@
                 padding: 8px 16px;
                 border-radius: 20px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transform: translateX(100%);
+                width: 0;
 
                 &:focus {
                     outline: none;
                     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                }
+
+                &.search-open {
+                    transform: translateX(0);
+                    width: 300px;
                 }
             }
         }
@@ -67,6 +74,11 @@
             }
         }
 
-
+        .search-container {
+            .input-container {
+                top: 28px;
+                right: 0;
+            }
+        }
     }
 }

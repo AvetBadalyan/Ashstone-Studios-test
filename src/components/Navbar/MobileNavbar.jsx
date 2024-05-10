@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { menuItems } from "./menuItems";
 import { MenuItem } from "./MenuItem";
 import Logo from "./../../assets/Logo.png";
@@ -19,8 +20,8 @@ const MobileNavbar = ({ isOpen, setIsBurgerMenuOpen }) => {
         </div>
       </header>
       <div className="mobile-navigation-list">
-        {menuItems.map((menuItem, index) => (
-          <MenuItem key={index} menuItem={menuItem} />
+        {menuItems.map((menuItem) => (
+          <MenuItem key={menuItem.label} menuItem={menuItem} />
         ))}
       </div>
     </div>

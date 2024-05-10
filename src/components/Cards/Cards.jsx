@@ -24,7 +24,11 @@ export function Cards() {
       <section className="container cards-container">
         {cards.map((card, index) => (
           <div className="card" key={index}>
-            <img src={card.img} alt={card.title} />
+            <img
+              src={card.img}
+              srcSet={`${card.img} 1x, ${card.img_2x} 2x`}
+              alt={card.title}
+            />
             <div className="tags">{card.tags}</div>
             <h2 className="title">{card.title}</h2>
             <div className="meta">

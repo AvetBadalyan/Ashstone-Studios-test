@@ -27,8 +27,8 @@ export function Navbar() {
       ref={navigationRef}
     >
       <div className="navigation-list">
-        {menuItems.map((menuItem, index) => (
-          <MenuItem key={index} menuItem={menuItem} />
+        {menuItems.map((menuItem) => (
+          <MenuItem key={menuItem.label} menuItem={menuItem} />
         ))}
       </div>
     </nav>

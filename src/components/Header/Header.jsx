@@ -9,7 +9,7 @@ export function Header({ setIsBurgerMenuOpen }) {
   const [searchIsOpen, setSearchIsOpen] = useState(false);
 
   const toggleSearchVisibility = () => {
-    setSearchIsOpen(!searchIsOpen);
+    setSearchIsOpen((prevState) => !prevState);
   };
 
   return (
@@ -27,11 +27,8 @@ export function Header({ setIsBurgerMenuOpen }) {
         <div className="input-container">
           <input
             type="text"
-            className="search-input"
-            style={{
-              transform: `translateX(${searchIsOpen ? "0" : "100%"})`,
-              width: searchIsOpen ? "260px" : "0px",
-            }}
+            className={`search-input ${searchIsOpen ? "search-open" : ""}`}
+           
             placeholder="Search..."
           />
         </div>

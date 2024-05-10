@@ -8,8 +8,8 @@ export function MenuItem({ menuItem }) {
   return (
     <div className="navigation-item">
       <span>{label}</span>
-      {submenu && <img src={Down} alt="arrow-down" />}
-      {submenu && (
+      {submenu && submenu.length && <img src={Down} alt="arrow-down" />}
+      {submenu && submenu.length && (
         <div className="submenu">
           {submenu.map((subItem, subIndex) => (
             <div className="submenu-item" key={subIndex}>
