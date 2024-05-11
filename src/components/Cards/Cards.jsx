@@ -1,8 +1,12 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
+import { Modal } from "../Modal/Modal";
 import "./Cards.scss";
 
 export function Cards() {
   const [cards, setCards] = useState([]);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,27 +23,52 @@ export function Cards() {
     fetchData();
   }, []);
 
+  const openModal = (card) => {
+    setSelectedCard(card);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCard(null);
+  };
+
+  const CardContent = ({ card }) => {
+    return (
+      <>
+        <img
+          src={card.img}
+          srcSet={`${card.img} 1x, ${card.img_2x} 2x`}
+          alt={card.title}
+        />
+        <div className="tags">{card.tags}</div>
+        <h2 className="title">{card.title}</h2>
+        <div className="meta">
+          <span className="author">{card.autor}</span>
+          <span className="date">{card.date}</span>
+          <span className="views">{card.views} views</span>
+        </div>
+        <p className="text">{card.text}</p>
+      </>
+    );
+  };
+
   return (
     <main>
       <section className="container cards-container">
         {cards.map((card, index) => (
-          <div className="card" key={index}>
-            <img
-              src={card.img}
-              srcSet={`${card.img} 1x, ${card.img_2x} 2x`}
-              alt={card.title}
-            />
-            <div className="tags">{card.tags}</div>
-            <h2 className="title">{card.title}</h2>
-            <div className="meta">
-              <span className="author">{card.autor}</span>
-              <span className="date">{card.date}</span>
-              <span className="views">{card.views} views</span>
-            </div>
-            <p className="text">{card.text}</p>
+          <div className="card" key={index} onClick={() => openModal(card)}>
+            <CardContent card={card} />
           </div>
         ))}
       </section>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {selectedCard && (
+          <div className="modal-card">
+            <CardContent card={selectedCard} />
+          </div>
+        )}
+      </Modal>
     </main>
   );
 }
