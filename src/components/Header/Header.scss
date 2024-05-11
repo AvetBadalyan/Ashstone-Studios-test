@@ -5,7 +5,7 @@ header {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        height: 80px;
+        height: 5rem;
 
         .search-container {
             flex: 1;
@@ -24,8 +24,8 @@ header {
                     border: none;
                     background-color: #f3f3f3;
                     font-size: 1rem;
-                    padding: 8px 16px;
-                    border-radius: 20px;
+                    padding: 0.5rem 1rem;
+                    border-radius: 1.25rem;
                     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                     transform: translateX(100%);
                     width: 0;
@@ -37,15 +37,15 @@ header {
 
                     &.search-open {
                         transform: translateX(0);
-                        width: 300px;
+                        width: 18.75rem;
                     }
                 }
             }
 
             img {
-                height: 16px;
-                width: 16px;
-                margin-left: 5px;
+                height: 1rem;
+                width: 1rem;
+                margin-left: 0.3125rem;
             }
         }
 
@@ -54,7 +54,7 @@ header {
 
             img {
                 display: none;
-                width: 25px;
+                width: 1.5625rem;
             }
         }
 
@@ -65,7 +65,7 @@ header {
             padding: 1.655rem 0;
 
             img {
-                width: 181px;
+                width: 11.3125rem;
             }
         }
 
@@ -78,7 +78,7 @@ header {
 
             .search-container {
                 .input-container {
-                    top: 28px;
+                    top: 1.75rem;
                     right: 0;
                 }
             }
