@@ -66,9 +66,14 @@
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #E9E9E9;
-    position: sticky;
     top: 0;
     background-color: white;
+    transition: top 0.3s ease;
+
+    &.sticky {
+        position: sticky;
+        top: 0;
+    }
 
     .navigation-list {
         display: flex;

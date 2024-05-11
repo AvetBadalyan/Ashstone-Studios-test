@@ -93,9 +93,10 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .cards-container {
         justify-content: center;
+        gap: 0.6rem;
 
         .card {
             width: 100%;
