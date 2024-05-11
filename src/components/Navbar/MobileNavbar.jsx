@@ -3,7 +3,7 @@ import { menuItems } from "./menuItems";
 import { MenuItem } from "./MenuItem";
 import Logo from "./../../assets/Logo.png";
 import Close from "./../../assets/close.png";
-import "./MobileNavbar.scss";
+import "./Navbar.scss";
 
 export function MobileNavbar({ isOpen, setIsBurgerMenuOpen }) {
   return (
