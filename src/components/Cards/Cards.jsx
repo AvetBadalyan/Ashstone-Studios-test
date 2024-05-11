@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Modal } from "../Modal/Modal";
 import "./Cards.scss";
 
-export function Cards() {
+export function Cards({ searchQuery }) {
   const [cards, setCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,6 +33,13 @@ export function Cards() {
     setSelectedCard(null);
   };
 
+  const filteredCards = cards.filter((card) => {
+    const title = card.title.toLowerCase();
+    const text = card.text.toLowerCase();
+    const query = searchQuery.toLowerCase();
+    return title.includes(query) || text.includes(query);
+  });
+
   const CardContent = ({ card }) => {
     return (
       <>
@@ -56,7 +63,7 @@ export function Cards() {
   return (
     <main>
       <section className="container cards-container">
-        {cards.map((card, index) => (
+        {filteredCards.map((card, index) => (
           <div className="card" key={index} onClick={() => openModal(card)}>
             <CardContent card={card} />
           </div>

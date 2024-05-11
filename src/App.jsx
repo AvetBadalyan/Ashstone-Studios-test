@@ -7,16 +7,20 @@ import { MobileNavbar } from "./components/Navbar/MobileNavbar";
 
 export function App() {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <>
-      <Header setIsBurgerMenuOpen={setIsBurgerMenuOpen} />
+      <Header
+        setSearchQuery={setSearchQuery}
+        setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+      />
       <Navbar />
       <MobileNavbar
         isOpen={isBurgerMenuOpen}
         setIsBurgerMenuOpen={setIsBurgerMenuOpen}
       />
-      <Cards />
+      <Cards searchQuery={searchQuery} />
     </>
   );
 }
