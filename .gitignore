@@ -15,6 +15,7 @@ dist-ssr
 .firebase/
 .firebaserc
 .firebaserc
+firebase.json
 build
 
 # Editor directories and files
