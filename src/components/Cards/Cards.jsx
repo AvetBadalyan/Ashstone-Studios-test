@@ -44,11 +44,15 @@ export function Cards({ searchQuery }) {
   return (
     <main>
       <section className="container cards-container">
-        {filteredCards.map((card, index) => (
-          <div className="card" key={index} onClick={() => openModal(card)}>
-            <CardContent card={card} />
-          </div>
-        ))}
+        {filteredCards.length ? (
+          filteredCards.map((card, index) => (
+            <div className="card" key={index} onClick={() => openModal(card)}>
+              <CardContent card={card} />
+            </div>
+          ))
+        ) : (
+          <h1 className="no-results">No Results 😕  </h1>
+        )}
       </section>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         {selectedCard && (
