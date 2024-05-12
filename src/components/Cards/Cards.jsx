@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Modal } from "../Modal/Modal";
 import "./Cards.scss";
+import { CardContent } from "./CardContent";
 
 export function Cards({ searchQuery }) {
   const [cards, setCards] = useState([]);
@@ -39,26 +40,6 @@ export function Cards({ searchQuery }) {
     const query = searchQuery.toLowerCase();
     return title.includes(query) || text.includes(query);
   });
-
-  const CardContent = ({ card }) => {
-    return (
-      <>
-        <img
-          src={card.img}
-          srcSet={`${card.img} 1x, ${card.img_2x} 2x`}
-          alt={card.title}
-        />
-        <div className="tags">{card.tags}</div>
-        <h2 className="title">{card.title}</h2>
-        <div className="meta">
-          <span className="author">{card.autor}</span>
-          <span className="date">{card.date}</span>
-          <span className="views">{card.views} views</span>
-        </div>
-        <p className="text">{card.text}</p>
-      </>
-    );
-  };
 
   return (
     <main>

@@ -24,7 +24,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 1.25rem;
+        padding: 0.725rem 1.25rem;
         min-width: 11rem;
         border: 1px solid #E9E9E9;
         background: #fff;
@@ -115,12 +115,13 @@
 
             img {
                 height: 1.5rem;
+                width: 10.08rem;
             }
         }
 
         .mobile-close-container {
             img {
-                width: 1.15rem;
+                width: 1.148rem;
             }
         }
     }
@@ -132,14 +133,19 @@
     .mobile-navigation-list {
         display: flex;
         flex-direction: column;
-        padding: 1.25rem;
+        padding: 2rem 1.25rem;
 
         .navigation-item {
-            padding: 1rem 0;
+            padding: 1.063rem 0;
             border-bottom: 1px solid #E9E9E9;
+
+            &:first-child {
+                padding-top: 0;
+            }
 
             &:last-child {
                 border: none;
+                padding-bottom: 0;
             }
         }
     }
