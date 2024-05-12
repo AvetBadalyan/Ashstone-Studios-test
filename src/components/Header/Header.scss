@@ -1,5 +1,4 @@
 header {
-    border-bottom: 1px solid #E9E9E9;
 
     .header-top {
         display: flex;
@@ -37,7 +36,7 @@ header {
 
                     &.search-open {
                         transform: translateX(0);
-                        width: 18.75rem;
+                        width: 19rem;
                     }
                 }
             }
@@ -55,6 +54,7 @@ header {
             img {
                 display: none;
                 width: 1.5625rem;
+                height: 1.05rem;
             }
         }
 
@@ -62,23 +62,28 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1.655rem 0;
 
             img {
-                width: 11.3125rem;
+                height: 1.688rem;
             }
         }
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 1024px) {
             .burger-container {
                 img {
                     display: inline-block;
                 }
             }
 
+            .logo-container {
+                img {
+                    height: 1.5rem;
+                }
+            }
+
             .search-container {
                 .input-container {
-                    top: 1.75rem;
+                    top: 1.4rem;
                     right: 0;
                 }
             }

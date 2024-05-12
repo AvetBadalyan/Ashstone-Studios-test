@@ -7,13 +7,12 @@
     line-height: 1rem;
     display: flex;
     align-items: center;
-    gap: 0.3125rem;
+    gap: 0.25rem;
     border: none;
     outline: none;
 
     img {
         width: 0.625rem;
-        transform: rotate(0deg);
     }
 
     &:hover .submenu {
@@ -29,17 +28,24 @@
         min-width: 11rem;
         border: 1px solid #E9E9E9;
         background: #fff;
+        z-index: 99999;
 
         .submenu-item {
             font-weight: 400;
-            font-size: 0.8125rem;
-            line-height: 0.8125rem;
-            text-align: left;
+            font-size: 0.813rem;
+            line-height: 0.813rem;
             border-bottom: 0.0625rem solid #E9E9E9;
-            padding: 0.375rem 0;
+            padding: 0.625rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: #000;
+
+            img {
+                transform: rotate(270deg);
+                height: 0.313rem;
+                width: 0.5rem;
+            }
 
             &:hover {
                 color: #969696;
@@ -65,6 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid #E9E9E9;
     border-bottom: 1px solid #E9E9E9;
     top: 0;
     background-color: white;
@@ -77,7 +84,7 @@
 
     .navigation-list {
         display: flex;
-        gap: 1.75rem;
+        gap: 2rem;
     }
 }
 
@@ -85,7 +92,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 90%;
+    width: 85.33%;
     height: 100%;
     background-color: white;
     z-index: 1000;
@@ -98,9 +105,13 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 1.25rem;
+        height: 5rem;
+        border-bottom: 1px solid #E9E9E9;
 
         .mobile-logo-container {
-            padding: 1.655rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             img {
                 height: 1.5rem;
@@ -109,7 +120,7 @@
 
         .mobile-close-container {
             img {
-                width: 1.125rem;
+                width: 1.15rem;
             }
         }
     }
@@ -121,11 +132,15 @@
     .mobile-navigation-list {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
         padding: 1.25rem;
 
         .navigation-item {
-            padding: 0.625rem 0;
+            padding: 1rem 0;
+            border-bottom: 1px solid #E9E9E9;
+
+            &:last-child {
+                border: none;
+            }
         }
     }
 }
@@ -140,7 +155,7 @@
     z-index: 999;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .navigation-bar {
         display: none;
     }

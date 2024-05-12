@@ -32,13 +32,12 @@
     font-weight: 700;
     line-height: 1.875rem;
     text-align: left;
-    color: #333;
+    color: #000000;
 }
 
 .meta,
 .modal-card .meta {
     font-size: 0.75rem;
-    color: #777;
     display: flex;
     align-items: center;
 
@@ -70,6 +69,7 @@
     line-height: 1.25rem;
     text-align: left;
     color: #929292;
+    font-weight: 400;
 }
 
 .cards-container {
@@ -78,13 +78,35 @@
     justify-content: space-between;
     margin-top: 3rem;
     gap: 8px;
+
+    .card {
+        width: calc((100% - 2.5rem) / 3);
+        max-width: 22.5rem;
+        min-height: 28.75rem;
+        margin-bottom: 1.25rem;
+    }
 }
 
-.cards-container .card {
-    width: calc((100% - 2.5rem) / 3);
-    max-width: 22.5rem;
-    min-height: 28.75rem;
-    margin-bottom: 1.25rem;
+.modal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.625rem;
+
+    img {
+        max-height: 18.75rem;
+        border-radius: 0.5rem;
+    }
+
+    .tags {
+        padding: 0.3125rem 6.25rem;
+        background-color: #FFE5E5;
+        text-align: center;
+    }
+
+    .title {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -97,40 +119,10 @@
     .cards-container {
         justify-content: center;
         gap: 0.6rem;
+        margin-top: 0.875rem;
 
         .card {
             width: 100%;
         }
     }
-}
-
-.modal-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.625rem;
-}
-
-.modal-card img {
-    max-height: 18.75rem;
-    border-radius: 0.5rem;
-}
-
-.modal-card .tags {
-    padding: 0.3125rem 6.25rem;
-    background-color: #FFE5E5;
-    text-align: center;
-    color: #EB0028;
-}
-
-.modal-card .title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.875rem;
-    text-align: center;
-    color: #333;
-}
-
-.modal-card .text {
-    color: #555;
 }

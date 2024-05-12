@@ -4,7 +4,6 @@ export const menuItems = [
     label: "Post",
     submenu: [
       "Post Header",
-      "Post Gallery",
       "Post Layout",
       "Share Buttons",
       "Gallery Post",
